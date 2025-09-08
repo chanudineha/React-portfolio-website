@@ -6,7 +6,7 @@ import { SiMongodb } from "react-icons/si"
 import { TbBrandNextjs } from "react-icons/tb"
 
 
-const Technolog = () => {
+const Technologies = () => {
   return (
     <div className="pb-24">
         <h2 className="my-20 text-center text-4xl">Technologies</h2>
@@ -34,4 +34,4 @@ const Technolog = () => {
   )
 }
 
-export default Technolog
+export default Technologies

@@ -1,6 +1,10 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero"; 
-import Technolog from "./components/Technolog";
+import Projects from "./components/Projects";
+import Technologies from "./components/Technologies";
+import Experience from "./components/Experience";
+import Contact from "./components/Contact";
+
 const App = () => {
   return (
     <div className="overflow-x-hidden text-stone-300 antialiased">
@@ -11,7 +15,10 @@ const App = () => {
   <div className="container mx-auto px-8">
    <Navbar />
    <Hero/>
-   <Technolog/>
+   <Technologies/>
+   <Projects />
+   <Experience/>
+   <Contact/>
   </div>
 
     </div>
