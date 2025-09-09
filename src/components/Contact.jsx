@@ -1,6 +1,7 @@
 import { CONTACT } from "../constants"
 import { motion } from "framer-motion"
 import { useState } from "react"
+import ElectricBorder from "./ElectricBorder"   // 👈 import here
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -52,72 +53,85 @@ const Contact = () => {
         >
           {CONTACT.phoneNo}
         </motion.p>
-        <motion.a 
-        whileInView={{ opacity: 1, x: 0 }}
+        <motion.a
+          whileInView={{ opacity: 1, x: 0 }}
           initial={{ opacity: 0, x: 100 }}
           transition={{ duration: 1.5 }}
-        href={`mailto:${CONTACT.email}`} className="border-b">
+          href={`mailto:${CONTACT.email}`}
+          className="border-b"
+        >
           {CONTACT.email}
         </motion.a>
       </div>
 
-      {/* Contact Form */}
-      <motion.form
-        onSubmit={handleSubmit}
-        whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: 50 }}
-        transition={{ duration: 0.8 }}
-        className="max-w-xl mx-auto p-6 bg-stone-900 rounded-2xl shadow-lg"
+      {/* Contact Form with ElectricBorder */}
+      <ElectricBorder
+        color="#7df9ff"
+        speed={1}
+        chaos={0.5}
+        thickness={2}
+        style={{ borderRadius: 16 }}
+        className="max-w-xl mx-auto"
       >
-        {/* Name */}
-        <div className="mb-4">
-          <label className="block mb-2 text-sm">Name</label>
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            className="w-full p-3 rounded-lg bg-stone-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-            required
-          />
-        </div>
-
-        {/* Email */}
-        <div className="mb-4">
-          <label className="block mb-2 text-sm">Email</label>
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            className="w-full p-3 rounded-lg bg-stone-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-            required
-          />
-        </div>
-
-        {/* Message */}
-        <div className="mb-4">
-          <label className="block mb-2 text-sm">Your Message</label>
-          <textarea
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            rows="5"
-            className="w-full p-3 rounded-lg bg-stone-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-            required
-          />
-        </div>
-
-        {/* Button */}
-        <button
-          type="submit"
-          className="w-full py-3 px-4 bg-gray-800 hover:bg-gray-700 rounded-lg font-semibold text-white transition-colors"
+        <motion.form
+          onSubmit={handleSubmit}
+          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 50 }}
+          transition={{ duration: 0.8 }}
+          className="p-6 bg-stone-900 rounded-2xl shadow-lg"
         >
-          Send Message
-        </button>
-      </motion.form>
+          {/* Name */}
+          <div className="mb-4">
+            <label className="block mb-2 text-sm">Name</label>
+            <input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              className="w-full p-3 rounded-lg bg-stone-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            />
+          </div>
+
+          {/* Email */}
+          <div className="mb-4">
+            <label className="block mb-2 text-sm">Email</label>
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              className="w-full p-3 rounded-lg bg-stone-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            />
+          </div>
+
+          {/* Message */}
+          <div className="mb-4">
+            <label className="block mb-2 text-sm">Your Message</label>
+            <textarea
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              rows="5"
+              className="w-full p-3 rounded-lg bg-stone-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            />
+          </div>
+
+          {/* Button */}
+          <button
+            type="submit"
+            className="w-full py-3 px-4 bg-gray-800 hover:bg-gray-700 rounded-lg font-semibold text-white transition-colors"
+          >
+            Send Message
+          </button>
+        </motion.form>
+      </ElectricBorder>
     </div>
   )
 }
 
 export default Contact
+
+

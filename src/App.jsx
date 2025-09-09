@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
 
+
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Projects from "./components/Projects";
@@ -54,7 +55,6 @@ const App = () => {
           />
         </div>
       </div>
-
       {/* Toggle button (icon) */}
       <button
         onClick={toggleRayColor}
